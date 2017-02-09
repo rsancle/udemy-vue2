@@ -7,12 +7,18 @@
 <body>
 	<div id="app">
       	<p>{{ title }}</p>
+      	<p>{{ sayHello() }}</p>
     </div>
     <script type="text/javascript">
 	    new Vue({
 	        el: '#app',
 	        data: {
-	          	title: 'Hello World!'
+	          	title: 'data title'
+	        },
+	        methods:{
+	        	sayHello: function(){
+	        		return 'Method sayHello()';
+	        	}
 	        }
 	    });
     </script>
