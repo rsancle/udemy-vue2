@@ -8,16 +8,23 @@
 	<div id="app">
       	<p>{{ title }}</p>
       	<p>{{ sayHello() }}</p>
+      	<p><strong>Method that print title:</strong> {{ printTitle() }}</p>
+      	<p><strong>Added link:</strong> <a v-bind:href="link">Google</a></p>
+      	<p>We can't use brakets inside of tags, so we need to use <strong>directives</strong>. In this case we use <strong>v-bind:href="link"</strong></p>
     </div>
     <script type="text/javascript">
 	    new Vue({
 	        el: '#app',
 	        data: {
-	          	title: 'data title'
+	          	title: 'data title',
+	          	link: 'http://google.com'
 	        },
 	        methods:{
 	        	sayHello: function(){
 	        		return 'Method sayHello()';
+	        	},
+	        	printTitle: function() {
+	        		return this.title;
 	        	}
 	        }
 	    });
