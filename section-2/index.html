@@ -6,11 +6,15 @@
 </head>
 <body>
 	<div id="app">
+		<h2>Interpolations</h2>
       	<p>{{ title }}</p>
       	<p>{{ sayHello() }}</p>
       	<p><strong>Method that print title:</strong> {{ printTitle() }}</p>
+      	
+      	<h2>Directives</h2>
       	<p><strong>Added link:</strong> <a v-bind:href="link">Google</a></p>
       	<p>We can't use brakets inside of tags, so we need to use <strong>directives</strong>. In this case we use <strong>v-bind:href="link"</strong></p>
+      	<p><strong>v-once</strong> directive show the value just the first time, it can't change in the future functions</p>
     </div>
     <script type="text/javascript">
 	    new Vue({
