@@ -28,6 +28,9 @@
 
 		<button v-on:click="increase">Click me</button>
 		<p>{{ counter }}</p>
+
+		<p>Using <strong>v-on:mousemove</strong></p>
+		<p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
 		
     </div>
     <script type="text/javascript">
@@ -37,7 +40,9 @@
 	          	title: 'data title',
 	          	link: 'http://google.com',
 				finishedLink: '<a href="http://google.com">Google</a>',
-				counter: 0
+				counter: 0,
+				x: 0,
+				y: 0
 	        },
 	        methods:{
 	        	sayHello: function(){
@@ -47,7 +52,11 @@
 	        		return this.title;
 	        	},
 				increase: function() {
-					return this.counter++;
+					this.counter++;
+				},
+				updateCoordinates: function(event) {
+					this.x = event.clientX;
+					this.y = event.clientY;
 				}
 	        }
 	    });
