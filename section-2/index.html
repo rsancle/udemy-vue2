@@ -26,7 +26,7 @@
 
 		<p>Using <strong>v-on:click</strong></p>
 
-		<button v-on:click="increase">Click me</button>
+		<button v-on:click="increase(2 , $event)">Click me</button>
 		<p>{{ counter }}</p>
 
 		<p>Using <strong>v-on:mousemove</strong></p>
@@ -51,8 +51,8 @@
 	        	printTitle: function() {
 	        		return this.title;
 	        	},
-				increase: function() {
-					this.counter++;
+				increase: function(step, event) {
+					this.counter += step;
 				},
 				updateCoordinates: function(event) {
 					this.x = event.clientX;
