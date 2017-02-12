@@ -21,6 +21,13 @@
 		<p>{{ finishedLink }}</p>
 		<p>But if we want show it as a HTML we need to use the directive <strong>v-html</strong></p>
 		<p v-html="finishedLink"></p>
+
+		<h2>Listening events</h2>
+
+		<p>Using <strong>v-on:click</strong></p>
+
+		<button v-on:click="increase">Click me</button>
+		<p>{{ counter }}</p>
 		
     </div>
     <script type="text/javascript">
@@ -29,7 +36,8 @@
 	        data: {
 	          	title: 'data title',
 	          	link: 'http://google.com',
-				finishedLink: '<a href="http://google.com">Google</a>'
+				finishedLink: '<a href="http://google.com">Google</a>',
+				counter: 0
 	        },
 	        methods:{
 	        	sayHello: function(){
@@ -37,7 +45,10 @@
 	        	},
 	        	printTitle: function() {
 	        		return this.title;
-	        	}
+	        	},
+				increase: function() {
+					return this.counter++;
+				}
 	        }
 	    });
     </script>
