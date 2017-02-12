@@ -30,7 +30,7 @@
 		<p>{{ counter }}</p>
 
 		<p>Using <strong>v-on:mousemove</strong></p>
-		<p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+		<p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }} <span v-on:mousemove.stop="">STOP UPDATE</span></p>
 		
     </div>
     <script type="text/javascript">
