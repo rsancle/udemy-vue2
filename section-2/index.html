@@ -15,13 +15,21 @@
       	<p><strong>Added link:</strong> <a v-bind:href="link">Google</a></p>
       	<p>We can't use brakets inside of tags, so we need to use <strong>directives</strong>. In this case we use <strong>v-bind:href="link"</strong></p>
       	<p><strong>v-once</strong> directive show the value just the first time, it can't change in the future functions</p>
+
+		<h2>Output html raw data</h2>
+		<p>By default show contet as sting</p>
+		<p>{{ finishedLink }}</p>
+		<p>But if we want show it as a HTML we need to use the directive <strong>v-html</strong></p>
+		<p v-html="finishedLink"></p>
+		
     </div>
     <script type="text/javascript">
 	    new Vue({
 	        el: '#app',
 	        data: {
 	          	title: 'data title',
-	          	link: 'http://google.com'
+	          	link: 'http://google.com',
+				finishedLink: '<a href="http://google.com">Google</a>'
 	        },
 	        methods:{
 	        	sayHello: function(){
