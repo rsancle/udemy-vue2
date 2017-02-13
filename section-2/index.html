@@ -31,6 +31,18 @@
 
 		<p>Using <strong>v-on:mousemove</strong></p>
 		<p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }} <span v-on:mousemove.stop="">STOP UPDATE</span></p>
+
+		<h3>Listening to keyboard events</h3>
+
+		<p>Keyboard eventsu using <strong>v-on:keyup</strong></p>
+		<input type="text" v-on:keyup="alertMe">
+
+		<p>Keyboard eventsu using <strong>v-on:keyup.enter</strong></p>
+		<input type="text" v-on:keyup.enter="alertMe">
+
+		<p>Keyboard eventsu using <strong>v-on:keyup.enter.space</strong></p>
+		<input type="text" v-on:keyup.enter.space="alertMe">
+
 		
     </div>
     <script type="text/javascript">
@@ -57,6 +69,9 @@
 				updateCoordinates: function(event) {
 					this.x = event.clientX;
 					this.y = event.clientY;
+				},
+				alertMe: function (){
+					alert('Key up!');
 				}
 	        }
 	    });
