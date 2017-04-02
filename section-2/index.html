@@ -43,6 +43,13 @@
 		<p>Keyboard eventsu using <strong>v-on:keyup.enter.space</strong></p>
 		<input type="text" v-on:keyup.enter.space="alertMe">
 
+		<h3>Usin operations in template</h3>
+		<p>We can make operations between brakets as <span > a > b ? 'print :'' + a : 'print : '' + b </p>
+
+		<h3>Usin models</h3>
+		<p>We can use <strong>v-model = "MyModel"</strong>  declared in vue object</p>
+		<input type="text" v-model="MyModel">
+		{{ MyModel }}
 		
     </div>
     <script type="text/javascript">
@@ -54,7 +61,8 @@
 				finishedLink: '<a href="http://google.com">Google</a>',
 				counter: 0,
 				x: 0,
-				y: 0
+				y: 0,
+				MyModel: "This is a model"
 	        },
 	        methods:{
 	        	sayHello: function(){
