@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>First Project in VueJS 2</title>
 	<script type="text/javascript" src="../vue.js"></script>
+
 </head>
+
 <body>
 	<div id="app">
 		<h2>Interpolations</h2>
-      	<p>{{ title }}</p>
-      	<p>{{ sayHello() }}</p>
-      	<p><strong>Method that print title:</strong> {{ printTitle() }}</p>
-      	
-      	<h2>Directives</h2>
-      	<p><strong>Added link:</strong> <a v-bind:href="link">Google</a></p>
-      	<p>We can't use brakets inside of tags, so we need to use <strong>directives</strong>. In this case we use <strong>v-bind:href="link"</strong></p>
-      	<p><strong>v-once</strong> directive show the value just the first time, it can't change in the future functions</p>
+		<p>{{ title }}</p>
+		<p>{{ sayHello() }}</p>
+		<p><strong>Method that print title:</strong> {{ printTitle() }}</p>
+
+		<h2>Directives</h2>
+		<p><strong>Added link:</strong> <a v-bind:href="link">Google</a></p>
+		<p>We can't use brakets inside of tags, so we need to use <strong>directives</strong>. In this case we use <strong>v-bind:href="link"</strong></p>
+		<p><strong>v-once</strong> directive show the value just the first time, it can't change in the future functions</p>
 
 		<h2>Output html raw data</h2>
 		<p>By default show contet as sting</p>
@@ -44,44 +47,22 @@
 		<input type="text" v-on:keyup.enter.space="alertMe">
 
 		<h2>Using operations in template</h2>
-		<p>We can make operations between brakets as <span > a > b ? 'print :'' + a : 'print : '' + b </p>
+		<p>We can make operations between brakets as <span> a > b ? 'print :'' + a : 'print : '' + b </p>
 
 		<h2>Using models</h2>
 		<p>We can use <strong>v-model = "MyModel"</strong>  declared in vue object</p>
 		<input type="text" v-model="MyModel">
 		{{ MyModel }}
-		
+
+		<h2>Using methods in html</h2>
+		<p>We will use result() method in this case, that uses a model
+			and we well use too a <strong>v-on:click="counter++"</strong></p>
+		<button v-on:click="counter++">Increase</button>
+		<button v-on:click="counter--">Decrease</button>
+		<p>Counter: {{ counter }}</p>
+		<p>Result: {{ result() }}</p>
+		{{  }}
+
     </div>
-    <script type="text/javascript">
-	    new Vue({
-	        el: '#app',
-	        data: {
-	          	title: 'data title',
-	          	link: 'http://google.com',
-				finishedLink: '<a href="http://google.com">Google</a>',
-				counter: 0,
-				x: 0,
-				y: 0,
-				MyModel: "This is a model"
-	        },
-	        methods:{
-	        	sayHello: function(){
-	        		return 'Method sayHello()';
-	        	},
-	        	printTitle: function() {
-	        		return this.title;
-	        	},
-				increase: function(step, event) {
-					this.counter += step;
-				},
-				updateCoordinates: function(event) {
-					this.x = event.clientX;
-					this.y = event.clientY;
-				},
-				alertMe: function (){
-					alert('Key up!');
-				}
-	        }
-	    });
-    </script>
+	<script type="text/javascript" src="main.js"></script>
 </html>
