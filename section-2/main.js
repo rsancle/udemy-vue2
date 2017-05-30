@@ -1,5 +1,7 @@
 new Vue({
+    //Connect to DOM
     el: '#app',
+    //Store Data to be used
     data: {
         title: 'data title',
         link: 'http://google.com',
@@ -9,6 +11,13 @@ new Vue({
         y: 0,
         MyModel: "This is a model"
     },
+    //Dependent Properties
+    computed: {
+        output: function(){
+            return this.counter > 5 ? 'Greater 5' : 'Smaller than 5';
+        }
+    },
+    //Methods of this Vue Instance
     methods: {
         sayHello: function() {
             return 'Method sayHello()';
@@ -26,7 +35,7 @@ new Vue({
         alertMe: function() {
             alert('Key up!');
         },
-        result(){
+        result: function(){
           return this.counter > 5 ? 'Greater 5' : 'Smaller than 5';
         }
     }

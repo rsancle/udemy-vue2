@@ -59,10 +59,12 @@
 			and we well use too a <strong>v-on:click="counter++"</strong></p>
 		<button v-on:click="counter++">Increase</button>
 		<button v-on:click="counter--">Decrease</button>
+		<button v-on:click="secondCounter++">Increase Second</button>
 		<p>Counter: {{ counter }}</p>
-		<p>Result: {{ result() }}</p>
+		<p>Result: {{ result() }}  | {{ output }}</p>
 		{{  }}
 
     </div>
 	<script type="text/javascript" src="main.js"></script>
+</body>
 </html>
