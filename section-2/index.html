@@ -51,6 +51,11 @@
 
 		<h2>Using models</h2>
 		<p>We can use <strong>v-model = "MyModel"</strong>  declared in vue object</p>
+		<pre>
+			data: {
+		        MyModel: "This is a model"
+		    },
+		</pre>
 		<input type="text" v-model="MyModel">
 		{{ MyModel }}
 
@@ -62,7 +67,34 @@
 		<button v-on:click="secondCounter++">Increase Second</button>
 		<p>Counter: {{ counter }}</p>
 		<p>Result: {{ result() }}  | {{ output }}</p>
-		{{  }}
+
+		<h2>Computed properties</h2>
+		<p>The computed properties, as <strong>output</strong> is like a function that are connected with the model.</p>
+			<pre>
+				computed: {
+			        output: function(){
+			            return this.counter > 5 ? 'Greater 5' : 'Smaller than 5';
+			        }
+			    },
+			</pre>
+
+		<h2>Watch</h2>
+		<p>It plays when the watched variable is "touched", as <strong>counter</strong></p>
+		<pre>
+			watch: {
+		        counter: function(value)
+		        {
+		            var vm = this;
+		            setTimeout(function(){
+		                vm.counter--;
+		            }, 2000);
+		        }
+		    },
+		</pre>
+
+		<h2>Shorthands</h2>		
+		<p>We can use shorthands to our events or binds. For example we can use <strong>@click</strong> instead of <strong>v-on:click</strong> and <strong>:href</strong> instead of <strong>v-bind:href</strong></p>
+
 
     </div>
 	<script type="text/javascript" src="main.js"></script>

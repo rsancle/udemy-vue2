@@ -7,6 +7,7 @@ new Vue({
         link: 'http://google.com',
         finishedLink: '<a href="http://google.com">Google</a>',
         counter: 0,
+        secondCounter: 0,
         x: 0,
         y: 0,
         MyModel: "This is a model"
@@ -15,6 +16,15 @@ new Vue({
     computed: {
         output: function(){
             return this.counter > 5 ? 'Greater 5' : 'Smaller than 5';
+        }
+    },
+    watch: {
+        counter: function(value)
+        {
+            var vm = this;
+            setTimeout(function(){
+                vm.counter--;
+            }, 2000);
         }
     },
     //Methods of this Vue Instance
